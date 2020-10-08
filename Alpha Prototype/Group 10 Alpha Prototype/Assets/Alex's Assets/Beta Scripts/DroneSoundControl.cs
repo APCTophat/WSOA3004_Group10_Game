@@ -33,7 +33,7 @@ public class DroneSoundControl : MonoBehaviour
         {
             //**********************************//
             //Adjust Pitch
-            if ((Input.GetButtonDown("Vertical")))
+            if ((Input.GetButtonDown("Vertical2")))
             {
 
                 SoundHolder.SetActive(true);
@@ -77,7 +77,7 @@ public class DroneSoundControl : MonoBehaviour
 
             //***********************************//
             //decelerate//
-            if (Input.GetButtonUp("Vertical"))
+            if (Input.GetButtonUp("Vertical2"))
             {
                 startCountAgain = true;
                 startCount = false;
@@ -101,11 +101,11 @@ public class DroneSoundControl : MonoBehaviour
                 }
             }
             //turn left and right//
-            if ((Input.GetButtonDown("Horizontal")))
+            if ((Input.GetButtonDown("Horizontal2")))
             {
                 turnSoundHolder.SetActive(true);
             }
-            if ((Input.GetButtonUp("Horizontal")))
+            if ((Input.GetButtonUp("Horizontal2")))
             {
                 turnSoundHolder.SetActive(false);
             }
