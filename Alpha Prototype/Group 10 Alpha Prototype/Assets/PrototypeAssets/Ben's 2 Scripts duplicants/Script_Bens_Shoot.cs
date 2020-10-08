@@ -14,6 +14,8 @@ public class Script_Bens_Shoot : MonoBehaviour
     public float _bulletDamageNormal;
     public float _bulletDamageUpgraded;
 
+    public AudioClip gunShot;
+
 
     public void Start()
     {
@@ -28,6 +30,8 @@ public class Script_Bens_Shoot : MonoBehaviour
             Rigidbody fireBullet;
             fireBullet = Instantiate(_Projectile, _Cannon.position, _Cannon.rotation) as Rigidbody;
             fireBullet.AddForce(_Cannon.forward * 2500);
+
+            AudioManager.Instance.PlayEffects(gunShot, 0.5f);
         }
 
 
