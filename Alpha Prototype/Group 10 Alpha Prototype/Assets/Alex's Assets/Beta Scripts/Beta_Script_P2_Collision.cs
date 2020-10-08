@@ -7,6 +7,7 @@ namespace Alex.Carvalho
     public class Beta_Script_P2_Collision : MonoBehaviour
     {
         public GameObject GameManger;
+        public AudioClip MetalHit;
 
         public string ResourceTag;
         public string ObstacleTag;
@@ -36,6 +37,8 @@ namespace Alex.Carvalho
                 var EnumValue = other.GetComponent<Beta_Script_World_Obstacles>()._challengeType;
                 GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth((int)EnumValue);
             }
+
+            AudioManager.Instance.PlayEffects(MetalHit,0.5f);
             
         }
     }
