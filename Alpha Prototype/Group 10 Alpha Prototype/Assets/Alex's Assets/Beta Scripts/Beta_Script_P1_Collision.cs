@@ -32,6 +32,8 @@ namespace Alex.Carvalho
         //Map variables
         public string MapName;
         public GameObject MiniMap;
+        //Audio
+        public AudioClip Hold;
        
         #endregion
 
@@ -60,6 +62,7 @@ namespace Alex.Carvalho
                     {
                         hit.collider.transform.parent = transform;
                         Holding = true;
+                        AudioManager.Instance.PlayEffects(Hold, 0.5f);
                     }
                 }
                 else if(hit.collider.tag == Resource || hit.collider.tag == ContainerCell || hit.collider.tag == RefinedResource)
