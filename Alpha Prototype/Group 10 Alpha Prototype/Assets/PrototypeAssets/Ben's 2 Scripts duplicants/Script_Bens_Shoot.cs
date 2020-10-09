@@ -29,7 +29,7 @@ public class Script_Bens_Shoot : MonoBehaviour
             GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().DecreaseAmmo();
             Rigidbody fireBullet;
             fireBullet = Instantiate(_Projectile, _Cannon.position, _Cannon.rotation) as Rigidbody;
-            fireBullet.AddForce(_Cannon.forward * 2500);
+            fireBullet.AddForce(_Cannon.forward * 10000);
 
             AudioManager.Instance.PlayEffects(gunShot, 0.5f);
         }
