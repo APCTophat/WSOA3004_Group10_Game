@@ -72,7 +72,7 @@ public class DroneSoundControl : MonoBehaviour
 
                 }
             }
-            Debug.Log(timer);
+           // Debug.Log(timer);
             //**********************************//
 
             //***********************************//
