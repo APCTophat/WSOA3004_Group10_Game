@@ -23,7 +23,7 @@ public class DroneSoundControl : MonoBehaviour
 
         GameManager = GameObject.FindGameObjectWithTag("GameController");
         
-        AudioManager.Instance.PlayMusic(music1);
+        //AudioManager.Instance.PlayMusic(music1);
     }
 
     // Update is called once per frame

@@ -30,6 +30,11 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource musicSource2;
     private AudioSource soundEffectsSource;
+    
+
+    public GameObject EnvironmentalSound;
+    public GameObject DroneSound;
+    public GameObject Player1Sound;
 
     bool isSourceOnePlaying;
     bool isMusicSourceOne;
@@ -39,7 +44,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         //persist throughout scenes
-        DontDestroyOnLoad(this.gameObject);
+       
 
         musicSource = this.gameObject.AddComponent<AudioSource>();
         musicSource2 = this.gameObject.AddComponent<AudioSource>();
@@ -48,7 +53,15 @@ public class AudioManager : MonoBehaviour
         musicSource.loop = true;
         musicSource2.loop = true;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EnvironmentalSound.SetActive(false);
+            DroneSound.SetActive(false);
+            Player1Sound.SetActive(false);
+        }
+    }
     //Play sounds.
     public void PlayMusic(AudioClip musicClip)
     {

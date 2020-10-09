@@ -8,6 +8,11 @@ public class Pause : MonoBehaviour
     public GameObject howtoMenu;
     public GameObject pauseMenu;
     public static bool isPause;
+
+    public GameObject EnvironmentalSound;
+    public GameObject Player1Sound;
+    public GameObject DroneSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +49,9 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
 
+        EnvironmentalSound.SetActive(true);
+        DroneSound.SetActive(true);
+        Player1Sound.SetActive(true);
     }
 
     public void GoToMenu()
