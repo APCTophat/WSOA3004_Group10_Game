@@ -19,4 +19,9 @@ public class DestroyProjectile : MonoBehaviour
         transform.Rotate(Vector3.forward * _rotationSpeed * Time.deltaTime);
         Destroy(gameObject, 1.8f);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }

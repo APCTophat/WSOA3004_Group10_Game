@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Alex.Carvalho
 {
@@ -138,6 +139,11 @@ namespace Alex.Carvalho
             else
             {
                 CanShoot = true;
+            }
+
+            if(Type_3_Res <= 0)
+            {
+                SceneManager.LoadScene("Main Menu");
             }
 
         }
