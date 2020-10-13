@@ -24,6 +24,7 @@ TagManager:
   - DestroyTag
   - Obstacle
   - Projectile
+  - Objective
   layers:
   - Default
   - TransparentFX

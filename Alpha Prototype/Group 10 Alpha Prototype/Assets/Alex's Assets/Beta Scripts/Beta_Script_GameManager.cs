@@ -34,8 +34,6 @@ namespace Alex.Carvalho
         public int Type3ListSize;
         public List<GameObject> Type3ActiveResource = new List<GameObject>();
         private List<GameObject> TempDisabledObject = new List<GameObject>();
-
-
         #endregion
         #endregion
 
@@ -59,6 +57,11 @@ namespace Alex.Carvalho
         //Variables relating to the P2 Actions
         public bool CanShoot;
         public bool CanMove;
+
+        public float healthDecreaseTime;
+        private float _healthDecreaseTime;
+
+
         #endregion
 
         #region Upgrade Variables
@@ -77,6 +80,7 @@ namespace Alex.Carvalho
         void Start()
         {
             _ResetTimer = 1f;
+            _healthDecreaseTime = healthDecreaseTime;
         }
 
  
@@ -86,6 +90,14 @@ namespace Alex.Carvalho
             UpdateP2UI();
             CheckResources();
             CheckUpgradeSense();
+
+            _healthDecreaseTime -= Time.deltaTime;
+            if(_healthDecreaseTime <= 0)
+            {
+                DecreaseHealth(1);
+                _healthDecreaseTime = healthDecreaseTime;
+            }
+
         }
 
         #region Resource Methods

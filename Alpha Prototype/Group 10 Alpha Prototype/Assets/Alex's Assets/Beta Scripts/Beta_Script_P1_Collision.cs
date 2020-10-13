@@ -115,7 +115,7 @@ namespace Alex.Carvalho
                 }
                 else
                 {
-                    MiniMap.SetActive(false);
+                   MiniMap.SetActive(false);
                 }
                 
             }

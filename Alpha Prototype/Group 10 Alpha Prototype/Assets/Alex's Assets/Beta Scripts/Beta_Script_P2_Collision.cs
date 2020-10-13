@@ -11,6 +11,7 @@ namespace Alex.Carvalho
 
         public string ResourceTag;
         public string ObstacleTag;
+        public string ObjectiveTag;
         void Start()
         {
             GameManger = GameObject.FindGameObjectWithTag("GameController");
@@ -39,6 +40,13 @@ namespace Alex.Carvalho
             }
 
             AudioManager.Instance.PlayEffects(MetalHit,0.5f);
+
+            if(other.gameObject.tag == ObjectiveTag)
+            {
+                GameManger.GetComponent<Script_Objective_Manager>().SpawnNextObjective(other.transform);
+                GameManger.GetComponent<Script_Objective_Manager>().UpdateScore();
+                other.gameObject.SetActive(false);
+            }
             
         }
     }
