@@ -42,7 +42,16 @@ namespace Alex.Carvalho
         public GameObject CraftingOutput;
         #endregion
 
-      
+        #region Crafting motion variables
+        public GameObject gear1;
+        public GameObject gear2;
+        public GameObject piston1;
+        public GameObject piston2;
+        public float timer1;
+        public float timer2;
+        public float timer3;
+        public bool isUp = false;
+        #endregion
 
         #region Variables for the Ui
         public Image CompletionBar;
@@ -67,8 +76,37 @@ namespace Alex.Carvalho
             {
                 //Increasing the crafting Time
                 _craftingAmount += _craftingRate * Time.deltaTime;
-              
                 
+                //Moving gears and pistons
+                gear1.transform.Rotate(new Vector3(0f, 0f, 100f) * Time.deltaTime);
+                gear2.transform.Rotate(new Vector3(0f, 0f, -100f) * Time.deltaTime);
+
+            //****************************************
+            //pistons
+            if (timer2 >= 0 & isUp == false)
+            {
+                piston1.transform.Translate(new Vector3(0f, 1f, 0f) * Time.deltaTime);
+                piston2.transform.Translate(new Vector3(0f, -1f, 0f) * Time.deltaTime);
+                timer2 -= Time.deltaTime;
+                if (timer2 <= 0)
+                {
+                    isUp = true;
+                }
+            }
+
+            if (timer2 <= timer3 & isUp == true)
+            {
+                piston1.transform.Translate(new Vector3(0f, -1f, 0f) * Time.deltaTime);
+                piston2.transform.Translate(new Vector3(0f, 1f, 0f) * Time.deltaTime);
+                timer2 += Time.deltaTime;
+                if (timer2 >= timer3)
+                {
+                    isUp = false;
+                }
+            }
+            //****************************************
+
+
             }
            
         }
@@ -86,6 +124,9 @@ namespace Alex.Carvalho
                     Instantiate(RefinedReasource, CraftingOuputPos.position + SpawnOffset, Quaternion.identity);
                     //Reset the crafting time
                     _craftingAmount = 0;
+                    //Stopping gears and pistons//
+                    gear1.transform.Rotate(new Vector3(0f, 0f, 0f) * Time.deltaTime);
+                    gear2.transform.Rotate(new Vector3(0f, 0f, 0f) * Time.deltaTime);
                 }
 
             }
