@@ -13,6 +13,8 @@ namespace Alex.Carvalho
         public bool _grounded = false;
 
         //New Variables
+        public float playerDriveSpeed = 25f;
+        public float _SpeedIncreaseRate;
         public float _playerSpeed;
         public float _playerSpeed_Normal;
         public float _playerSpeed_Upgrade;
@@ -46,13 +48,30 @@ namespace Alex.Carvalho
             //PlayerMovement();
             CalculateGround();
             CheckForUpgrade();
+            CheckIfofftrack();
         }
 
         public void PlayerMovement()
         {
             float _vertical = Input.GetAxisRaw("Player 2 Vertical");
+            if(_vertical != 0)
+            {
+                playerDriveSpeed += _SpeedIncreaseRate * Time.deltaTime;
+                if(playerDriveSpeed >= _playerSpeed)
+                {
+                    playerDriveSpeed = _playerSpeed;
+                }
+            }
+            else
+            {
+                playerDriveSpeed -= _SpeedIncreaseRate * Time.deltaTime;
+                if(playerDriveSpeed <= 25)
+                {
+                    playerDriveSpeed = 25;
+                }
+            }
             Vector3 _zMovement = transform.forward * _vertical;
-            _mover.Move(_zMovement * _playerSpeed * Time.deltaTime);
+            _mover.Move(_zMovement * playerDriveSpeed * Time.deltaTime);
 
             float _horizontal = Input.GetAxisRaw("Player 2 Horizontal");
             transform.Rotate(0f, _horizontal * _playerTurnSpeed * Time.deltaTime, 0f);
@@ -106,7 +125,18 @@ namespace Alex.Carvalho
             }
 
         }
-
+        public void CheckIfofftrack()
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, Vector3.down, out hit, 10))
+            {
+                if(hit.transform.tag == "Enviroment")
+                {
+                    GameManager.GetComponent<Beta_Script_GameManager>().DecreaseHealth(1);
+                }
+              
+            }
+        }
         void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Clone"))
