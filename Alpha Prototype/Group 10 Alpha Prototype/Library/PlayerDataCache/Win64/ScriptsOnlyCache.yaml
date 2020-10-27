@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - Alex.Carvalho.Beta_Script_Refined_Reasource
     - Alex.Carvalho.Beta_Script_World_Obstacles
     - Alex.Carvalho.Beta_Script_World_Resource
+    - Alex.Carvalho.Script_Objective_Manager
     - Alex.Carvalho.Script_Player_1_Movement
     - AudioManager
     - CameraLock
@@ -22,7 +23,6 @@ ScriptsOnlyBuild:
     - Menu
     - Pause
     - Player1Sound
-    - PlayerCtrl
     - RotateResource
     - Script_Bens_Shoot
     Cinemachine.dll:
@@ -93,85 +93,85 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11850}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 11860}
     - Class: 114
-      Script: {instanceID: 12056}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12386}
     - Class: 114
-      Script: {instanceID: 12496}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12456}
     - Class: 114
-      Script: {instanceID: 12534}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12554}
+      Script: {instanceID: 12494}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12582}
+      Script: {instanceID: 12580}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12714}
     - Class: 114
-      Script: {instanceID: 12868}
+      Script: {instanceID: 12810}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12848}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12916}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13046}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13250}
+      Script: {instanceID: 13192}
     - Class: 114
-      Script: {instanceID: 13318}
+      Script: {instanceID: 13260}
     - Class: 114
-      Script: {instanceID: 13386}
+      Script: {instanceID: 13328}
     - Class: 114
-      Script: {instanceID: 13388}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 13342}
     - Class: 114
-      Script: {instanceID: 13404}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13370}
     - Class: 114
-      Script: {instanceID: 13482}
+      Script: {instanceID: 13424}
     - Class: 114
-      Script: {instanceID: 13548}
+      Script: {instanceID: 13490}
     - Class: 114
-      Script: {instanceID: 13646}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 13656}
+      Script: {instanceID: 13598}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 13812}
+      Script: {instanceID: 13754}
     - Class: 114
-      Script: {instanceID: 13936}
+      Script: {instanceID: 13878}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 13886}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 14018}
     - Class: 114
-      Script: {instanceID: 14162}
+      Script: {instanceID: 14104}
     - Class: 114
-      Script: {instanceID: 14190}
+      Script: {instanceID: 14132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -228,25 +228,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13046}
     - Class: 114
-      Script: {instanceID: 13404}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 14018}
     - Class: 114
-      Script: {instanceID: 14190}
+      Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 14230}
+      Script: {instanceID: 14172}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -285,31 +285,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12606}
+      Script: {instanceID: 12544}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13046}
     - Class: 114
-      Script: {instanceID: 13404}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 13364}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 13962}
+      Script: {instanceID: 13904}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 14018}
     - Class: 114
-      Script: {instanceID: 14190}
+      Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 14230}
+      Script: {instanceID: 14172}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -327,6 +327,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -365,7 +371,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 86fdaffb9f576cd00eae34e2005b6cac
+      Hash: 0a98aedc1b072181f64e81e013af835f
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alex.Carvalho
     className: Beta_Script_P2_Movment
@@ -623,7 +629,7 @@ ScriptsOnlyBuild:
     className: Script_Bens_RotateReasources
   - hash:
       serializedVersion: 2
-      Hash: 2dda8c80a8c66a97cfe4bfde63ccd51b
+      Hash: 8306d335bde5a9e43c5b6368d22b40c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alex.Carvalho
     className: Beta_Script_GameManager
@@ -635,7 +641,7 @@ ScriptsOnlyBuild:
     className: Beta_Script_Raw_Reasource
   - hash:
       serializedVersion: 2
-      Hash: 0a58bff5317b3341f4832f82d183778f
+      Hash: 88ae8e904fc135eb4ca4b439f31ec027
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alex.Carvalho
     className: Beta_Script_Crafting
@@ -645,12 +651,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioManager
-  - hash:
-      serializedVersion: 2
-      Hash: cc4274b586df3c02688bac01b88bd16c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.EventSystems
-    className: EventSystem
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -695,6 +695,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 5b7fe4c5328358217929bde6127f3632
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Alex.Carvalho
+    className: Script_Objective_Manager
+  - hash:
+      serializedVersion: 2
       Hash: 37de53a49708b087da4050fc1ca7a6ee
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -717,6 +723,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Alex.Carvalho
+    className: Script_Objective_Object
   - hash:
       serializedVersion: 2
       Hash: e78709e690dc77916f3252ffe12b9d1f
@@ -1007,7 +1019,7 @@ ScriptsOnlyBuild:
     className: DroneSoundControl
   - hash:
       serializedVersion: 2
-      Hash: 04b61ab1127ba6e7e2eae865868dae71
+      Hash: c7915c728d8b3320f9671d9309bda8c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alex.Carvalho
     className: Beta_Script_P2_Collision
@@ -1280,4 +1292,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Guide Menu.unity
   - Assets/Scenes/BetaScene.unity
-  playerPath: C:/Users/alexa/Desktop/Beta Build/V3/Group 10 Alpha Prototype.exe
+  playerPath: D:/BuildFolders/3rd Year/Semester 2/Final Assignment/Build_15_10/Group
+    10 Alpha Prototype.exe
