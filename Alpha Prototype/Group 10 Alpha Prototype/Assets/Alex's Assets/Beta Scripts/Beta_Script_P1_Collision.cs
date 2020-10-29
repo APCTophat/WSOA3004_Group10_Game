@@ -38,6 +38,7 @@ namespace Alex.Carvalho
         //Crafting
         public string CraftingName;
         public GameObject CraftingObject;
+        public GameObject GameManager;
        
         #endregion
 
@@ -45,6 +46,7 @@ namespace Alex.Carvalho
         {
             CheckRoom();
             MapInteration();
+            CheckForSceneElenemts();
             if (Input.GetKey(KeyCode.R))
             {
                 GrabHold = true;
@@ -126,14 +128,27 @@ namespace Alex.Carvalho
 
         }
 
-        public void CheckForCrafting()
+        public void CheckForSceneElenemts()
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2))
             {
-                if (hit.transform.name == CraftingName && Input.GetKey(KeyCode.F))
+                if (hit.transform.name == CraftingName && Input.GetKeyDown(KeyCode.E))
                 {
                     CraftingObject.GetComponent<Script_P1_Crafter>().CraftingCheck();
+                }
+
+          
+
+                if(hit.transform.tag == "Drive")
+                {
+                  
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                       
+                        GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToOutside();
+                    }
+                 
                 }
                
 

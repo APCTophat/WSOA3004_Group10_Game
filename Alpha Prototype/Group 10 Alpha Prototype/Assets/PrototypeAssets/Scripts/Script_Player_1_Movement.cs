@@ -14,6 +14,12 @@ namespace Alex.Carvalho
 
         public float RotationSpeed;
 
+        //Relating to scene changes
+        public GameObject GameManger;
+        public int StateInt;
+
+        public Transform OffPlatform;
+
         #endregion
         // Start is called before the first frame update
         void Start()
@@ -24,7 +30,8 @@ namespace Alex.Carvalho
         // Update is called once per frame
         void Update()
         {
-            MoveThePlayer();
+           
+            CheckIfActive();
         }
 
         public void MoveThePlayer()
@@ -42,6 +49,19 @@ namespace Alex.Carvalho
             
            
             PlayerController.Move(movement * PlayerSpeed * Time.deltaTime);     
+        }
+        //Checks to see if the enviroment is on P1
+        public void CheckIfActive()
+        {
+            if(StateInt == GameManger.GetComponent<Script_Player_Scene_Manager>()._PlayerStateInt)
+            {
+                MoveThePlayer();
+            }
+            else
+            {
+                transform.position = new Vector3(OffPlatform.position.x, transform.position.y, OffPlatform.position.z);
+            }
+;
         }
     }
 }

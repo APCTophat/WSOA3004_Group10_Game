@@ -32,6 +32,7 @@ namespace Alex.Carvalho
 
        public GameObject GameManager;
 
+        public int StateInt;
         private void Start()
         {
             _mover = GetComponent<CharacterController>();
@@ -41,11 +42,14 @@ namespace Alex.Carvalho
 
         private void FixedUpdate()
         {
-            if (GameManager.GetComponent<Beta_Script_GameManager>().CanMove)
-             {
-                 PlayerMovement();
-             } 
-            //PlayerMovement();
+            if (StateInt == GameManager.GetComponent<Script_Player_Scene_Manager>()._PlayerStateInt)
+            {
+                if (GameManager.GetComponent<Beta_Script_GameManager>().CanMove)
+                {
+                    PlayerMovement();
+                }
+            }
+              
             CalculateGround();
             CheckForUpgrade();
             CheckIfofftrack();
@@ -53,7 +57,7 @@ namespace Alex.Carvalho
 
         public void PlayerMovement()
         {
-            float _vertical = Input.GetAxisRaw("Player 2 Vertical");
+            float _vertical = Input.GetAxisRaw("Player 1 Vertical");
             if(_vertical != 0)
             {
                 playerDriveSpeed += _SpeedIncreaseRate * Time.deltaTime;
@@ -73,13 +77,19 @@ namespace Alex.Carvalho
             Vector3 _zMovement = transform.forward * _vertical;
             _mover.Move(_zMovement * playerDriveSpeed * Time.deltaTime);
 
-            float _horizontal = Input.GetAxisRaw("Player 2 Horizontal");
+            float _horizontal = Input.GetAxisRaw("Player 1 Horizontal");
             transform.Rotate(0f, _horizontal * _playerTurnSpeed * Time.deltaTime, 0f);
 
             if (_vertical != 0 || _horizontal != 0)
             {
 
                 GameManager.GetComponent<Beta_Script_GameManager>().DecreaseFuel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToInside();
             }
 
 
@@ -97,8 +107,6 @@ namespace Alex.Carvalho
             }
           
         }
-
-
 
         void CalculateGround()
         {

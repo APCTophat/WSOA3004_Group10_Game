@@ -26,6 +26,7 @@ TagManager:
   - Projectile
   - Objective
   - Enviroment
+  - Drive
   layers:
   - Default
   - TransparentFX
