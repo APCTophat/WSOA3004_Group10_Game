@@ -34,6 +34,10 @@ namespace Alex.Carvalho
         public GameObject MiniMap;
         //Audio
         public AudioClip Hold;
+
+        //Crafting
+        public string CraftingName;
+        public GameObject CraftingObject;
        
         #endregion
 
@@ -118,6 +122,21 @@ namespace Alex.Carvalho
                    MiniMap.SetActive(false);
                 }
                 
+            }
+
+        }
+
+        public void CheckForCrafting()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2))
+            {
+                if (hit.transform.name == CraftingName && Input.GetKey(KeyCode.F))
+                {
+                    CraftingObject.GetComponent<Script_P1_Crafter>().CraftingCheck();
+                }
+               
+
             }
         }
     }
