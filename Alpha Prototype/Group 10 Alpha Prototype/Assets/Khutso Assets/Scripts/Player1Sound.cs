@@ -7,6 +7,8 @@ public class Player1Sound : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Player1SoundHolder;
     public GameObject Player1SoundHolder2;
+    bool Inside = false;
+    bool Outside = true;
     void Start()
     {
         
@@ -15,19 +17,38 @@ public class Player1Sound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetButtonDown("Player 1 Horizontal")))
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            Player1SoundHolder.SetActive(true);
+            Inside = true;
+            Outside = false;
         }
-        if((Input.GetButtonUp("Player 1 Horizontal"))){
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Inside = false;
+            Outside = true;
+        }
+        if (Inside == true)
+        {
+            if ((Input.GetButtonDown("Player 1 Horizontal")))
+            {
+                Player1SoundHolder.SetActive(true);
+            }
+            if ((Input.GetButtonUp("Player 1 Horizontal")))
+            {
+                Player1SoundHolder.SetActive(false);
+            }
+            if ((Input.GetButtonDown("Player 1 Vertical")))
+            {
+                Player1SoundHolder2.SetActive(true);
+            }
+            if ((Input.GetButtonUp("Player 1 Vertical")))
+            {
+                Player1SoundHolder2.SetActive(false);
+            }
+        }
+        else
+        {
             Player1SoundHolder.SetActive(false);
-        }
-        if ((Input.GetButtonDown("Player 1 Vertical")))
-        {
-            Player1SoundHolder2.SetActive(true);
-        }
-        if ((Input.GetButtonUp("Player 1 Vertical")))
-        {
             Player1SoundHolder2.SetActive(false);
         }
     }

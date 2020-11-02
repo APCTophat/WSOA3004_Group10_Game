@@ -17,6 +17,9 @@ public class DroneSoundControl : MonoBehaviour
     bool startCount = false;
     bool startCountAgain = false;
 
+    bool Inside = false;
+    bool Outside = true;
+
     CharacterController _mover;
     void Start()
     {
@@ -29,86 +32,100 @@ public class DroneSoundControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanMove)
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            //**********************************//
-            //Adjust Pitch
-            if ((Input.GetButtonDown("Vertical2")))
+            Inside = true;
+            Outside = false;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Inside = false;
+            Outside = true;
+        }
+        if (Outside == true)
+        {
+            if (GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanMove)
             {
-
-                SoundHolder.SetActive(true);
-                startCountAgain = false;
-                startCount = true;
-
-            }
-            if (startCount == true)
-            {
-                timer -= Time.deltaTime;
-                if (timer <= 0)
+                //**********************************//
+                //Adjust Pitch
+                if ((Input.GetButtonDown("Player 1 Vertical")))
                 {
-                    timer = 0;
-                }
-                if (timer > 6f & timer < 8f)
-                {
-                    source.pitch = 0.7f;
-                }
-                if (timer > 4f & timer < 6f)
-                {
-                    source.pitch = 0.7f;
-                }
-                if (timer > 2f & timer < 4f)
-                {
-                    source.pitch = 0.8f;
-                }
-                if (timer > 2f & timer < 4f)
-                {
-                    source.pitch = 0.9f;
-                }
-                if (timer <= 0)
-                {
-                    source.pitch = 1f;
-                    startCount = false;
-                    timer = 5f;
 
-                }
-            }
-           // Debug.Log(timer);
-            //**********************************//
-
-            //***********************************//
-            //decelerate//
-            if (Input.GetButtonUp("Vertical2"))
-            {
-                startCountAgain = true;
-                startCount = false;
-
-            }
-
-            if (startCountAgain == true)
-            {
-                timer2 -= Time.deltaTime;
-
-                if (timer2 <= 2 & timer2 > 1)
-                    source.pitch = 0.8f;
-                if (timer2 < 1f)
-                    source.pitch = 0.5f;
-                if (timer2 <= 0)
-                {
-                    timer2 = 0f;
-                    SoundHolder.SetActive(false);
+                    SoundHolder.SetActive(true);
                     startCountAgain = false;
-                    timer2 = 2f;
+                    startCount = true;
+
+                }
+                if (startCount == true)
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        timer = 0;
+                    }
+                    if (timer > 6f & timer < 8f)
+                    {
+                        source.pitch = 0.7f;
+                    }
+                    if (timer > 4f & timer < 6f)
+                    {
+                        source.pitch = 0.7f;
+                    }
+                    if (timer > 2f & timer < 4f)
+                    {
+                        source.pitch = 0.8f;
+                    }
+                    if (timer > 2f & timer < 4f)
+                    {
+                        source.pitch = 0.9f;
+                    }
+                    if (timer <= 0)
+                    {
+                        source.pitch = 1f;
+                        startCount = false;
+                        timer = 5f;
+
+                    }
+                }
+                // Debug.Log(timer);
+                //**********************************//
+
+                //***********************************//
+                //decelerate//
+                if (Input.GetButtonUp("Player 1 Vertical"))
+                {
+                    startCountAgain = true;
+                    startCount = false;
+
+                }
+
+                if (startCountAgain == true)
+                {
+                    timer2 -= Time.deltaTime;
+
+                    if (timer2 <= 2 & timer2 > 1)
+                        source.pitch = 0.8f;
+                    if (timer2 < 1f)
+                        source.pitch = 0.5f;
+                    if (timer2 <= 0)
+                    {
+                        timer2 = 0f;
+                        SoundHolder.SetActive(false);
+                        startCountAgain = false;
+                        timer2 = 2f;
+                    }
+                }
+                //turn left and right//
+                if ((Input.GetButtonDown("Player 1 Horizontal")))
+                {
+                    turnSoundHolder.SetActive(true);
+                }
+                if ((Input.GetButtonUp("Player 1 Horizontal")))
+                {
+                    turnSoundHolder.SetActive(false);
                 }
             }
-            //turn left and right//
-            if ((Input.GetButtonDown("Horizontal2")))
-            {
-                turnSoundHolder.SetActive(true);
-            }
-            if ((Input.GetButtonUp("Horizontal2")))
-            {
-                turnSoundHolder.SetActive(false);
-            }
+
         }
         else
         {
@@ -116,7 +133,7 @@ public class DroneSoundControl : MonoBehaviour
             turnSoundHolder.SetActive(false);
         }
 
-     }
+    }
  
 
   
