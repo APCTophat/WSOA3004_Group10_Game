@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Alex.Carvalho
 {
@@ -11,6 +12,8 @@ namespace Alex.Carvalho
         private float TimeTillNextWave;
         public float MaxTime;
         public float MinTime;
+
+        public Text NextWaveText;
         #endregion
 
         #region SolarFlare Event Variables
@@ -41,8 +44,10 @@ namespace Alex.Carvalho
         public void CountDownTimer()
         {
             TimeTillNextWave -= Time.deltaTime;
+            NextWaveText.text = TimeTillNextWave.ToString("f2");
             if(TimeTillNextWave <= 0)
             {
+                NextWaveText.text = "0";
                 SolarFlare();
             }
         }
@@ -50,6 +55,7 @@ namespace Alex.Carvalho
         public void SolarFlare()
         {
             EventDuration -= Time.deltaTime;
+            GameManager.GetComponent<Beta_Script_GameManager>().SolarEventHealth();
             if(EventDuration <= 0)
             {
                 CallNextWave();
