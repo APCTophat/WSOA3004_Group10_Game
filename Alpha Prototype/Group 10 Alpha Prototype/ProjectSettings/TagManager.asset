@@ -27,6 +27,7 @@ TagManager:
   - Objective
   - Enviroment
   - Drive
+  - Enemy
   layers:
   - Default
   - TransparentFX
