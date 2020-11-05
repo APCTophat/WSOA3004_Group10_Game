@@ -63,6 +63,9 @@ namespace Alex.Carvalho
             {
                 AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
             }
+
         }
+
+
     }
 }

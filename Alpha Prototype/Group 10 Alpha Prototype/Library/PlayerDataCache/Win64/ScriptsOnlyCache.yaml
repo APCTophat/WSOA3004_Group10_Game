@@ -19,9 +19,9 @@ ScriptsOnlyBuild:
     - Alex.Carvalho.Script_P1_Crafter
     - Alex.Carvalho.Script_Player_1_Movement
     - Alex.Carvalho.Script_Player_Scene_Manager
+    - Alex.Carvalho.Script_Solar_Event
     - AudioManager
     - CameraLock
-    - DestroyProjectile
     - DroneSoundControl
     - Menu
     - Pause
@@ -98,17 +98,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11850}
     - Class: 114
-      Script: {instanceID: 11862}
+      Script: {instanceID: 11860}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12010}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12234}
+      Script: {instanceID: 12232}
+    - Class: 114
+      Script: {instanceID: 12356}
     - Class: 114
       Script: {instanceID: 12390}
     - Class: 114
@@ -239,9 +241,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 12010}
+      Script: {instanceID: 12008}
     - Class: 114
       Script: {instanceID: 13052}
     - Class: 114
@@ -296,9 +298,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 12010}
+      Script: {instanceID: 12008}
     - Class: 114
       Script: {instanceID: 12548}
     - Class: 114
@@ -602,6 +604,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 1dc3110d5b475338423eb7056ca26d67
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Alex.Carvalho
+    className: Script_Solar_Event
+  - hash:
+      serializedVersion: 2
       Hash: ae20da6493a48ec6a8af7899dcb31507
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -872,12 +880,6 @@ ScriptsOnlyBuild:
     className: CinemachineImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: d3a6efe7de95e50f98efeb9890621726
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DestroyProjectile
-  - hash:
-      serializedVersion: 2
       Hash: e6d75f1a9bc0c6f7085df0baa077e688
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1040,7 +1042,7 @@ ScriptsOnlyBuild:
     className: DroneSoundControl
   - hash:
       serializedVersion: 2
-      Hash: c7915c728d8b3320f9671d9309bda8c8
+      Hash: 9340df343db678fe97294acf65b83ce7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alex.Carvalho
     className: Beta_Script_P2_Collision
@@ -1319,4 +1321,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Guide Menu.unity
   - Assets/Scenes/BetaScene.unity
-  playerPath: C:/Users/alexa/Desktop/New folder (2)/Group 10 Alpha Prototype.exe
+  playerPath: D:/Games/TestBuild/Group 10 Alpha Prototype.exe

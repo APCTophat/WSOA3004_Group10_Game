@@ -28,6 +28,7 @@ TagManager:
   - Enviroment
   - Drive
   - Enemy
+  - RaceTrackTag
   layers:
   - Default
   - TransparentFX
