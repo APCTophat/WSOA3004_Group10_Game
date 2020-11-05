@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 135
+  controlID: 64
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 41
+  controlID: 69
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 42
+  controlID: 70
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -362,7 +362,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
+    m_HSlider: 1
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
@@ -376,18 +376,18 @@ MonoBehaviour:
       y: 21
       width: 360
       height: 412
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 180, y: 206}
+    m_Scale: {x: 1.7009002, y: 1.7009002}
+    m_Translation: {x: 136.45854, y: 206}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -180
-      y: -206
-      width: 360
-      height: 412
+      x: -80.22725
+      y: -121.112335
+      width: 211.65263
+      height: 242.22467
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 450, y: 541.25}
@@ -424,10 +424,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 9292ffffb892ffff0094ffff0a94ffff1894ffff60fbffff
+      scrollPos: {x: 0, y: 149.59116}
+      m_SelectedIDs: 9c89ffff
+      m_LastClickedID: -30308
+      m_ExpandedIDs: 7a97ffff0cfaffff60fbffff623e0000924100009e450000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 795.0792, y: 56.72331, z: 1374.1854}
+    m_Target: {x: 719.313, y: 4.116021, z: 1262.9727}
     speed: 2
-    m_Value: {x: 795.0792, y: 56.72331, z: 1374.1854}
+    m_Value: {x: 719.313, y: 4.116021, z: 1262.9727}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -537,13 +537,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.08196457, y: -0.87158793, z: 0.15618104, w: 0.45741075}
+    m_Target: {x: 0.050793882, y: -0.6601049, z: 0.7481062, w: 0.04481744}
     speed: 2
-    m_Value: {x: 0.08196453, y: -0.8715875, z: 0.15618096, w: 0.45741054}
+    m_Value: {x: 0.05079414, y: -0.6601082, z: 0.74811, w: 0.044817667}
   m_Size:
-    m_Target: 7.7650733
+    m_Target: 11.393053
     speed: 2
-    m_Value: 7.7650733
+    m_Value: 11.393053
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -633,22 +633,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Khutso Assets/Sounds
+    - Assets/Khutso Assets/Enemies/Enemy Drone
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Khutso Assets/Sounds
+  - Assets/Khutso Assets/Enemies/Enemy Drone
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Beta\WSOA3004_Group10_Game\Alpha Prototype\Group 10 Alpha
     Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: e27a0000
-    m_LastClickedID: 31458
-    m_ExpandedIDs: 000000000a7a00000c7a00000e7a0000107a000000ca9a3b
+    scrollPos: {x: 0, y: 20}
+    m_SelectedIDs: 2a7b0000
+    m_LastClickedID: 31530
+    m_ExpandedIDs: 000000000a7a00000c7a00000e7a00001e7a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -676,7 +676,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a7a00000c7a00000e7a0000107a0000
+    m_ExpandedIDs: 000000000a7a00000c7a00000e7a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -728,7 +728,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 95}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 217
