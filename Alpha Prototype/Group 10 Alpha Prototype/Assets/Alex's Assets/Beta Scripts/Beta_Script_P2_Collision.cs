@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,10 +9,14 @@ namespace Alex.Carvalho
     {
         public GameObject GameManger;
         public AudioClip MetalHit;
+        public AudioClip ObjectiveHit;
+        public AudioClip ResourceHit;
+        public AudioClip EnemyHit;
 
         public string ResourceTag;
         public string ObstacleTag;
         public string ObjectiveTag;
+        public string EnemyTag;
         void Start()
         {
             GameManger = GameObject.FindGameObjectWithTag("GameController");
@@ -31,23 +36,36 @@ namespace Alex.Carvalho
                 GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceP1((int)EnumValue);
                 GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceP2((int)EnumValue, other.transform);
                 other.gameObject.SetActive(false);
+
+                //sound//
+                AudioManager.Instance.PlayEffects(ResourceHit, 0.5f);
             }
            
             if(other.gameObject.tag == ObstacleTag)
             {
                 var EnumValue = other.GetComponent<Beta_Script_World_Obstacles>()._challengeType;
                 GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth((int)EnumValue);
+                //sound//
+                AudioManager.Instance.PlayEffects(MetalHit, 0.5f);
             }
 
-            AudioManager.Instance.PlayEffects(MetalHit,0.5f);
+            
 
             if(other.gameObject.tag == ObjectiveTag)
             {
                 GameManger.GetComponent<Script_Objective_Manager>().SpawnNextObjective(other.transform);
                 GameManger.GetComponent<Script_Objective_Manager>().UpdateScore();
                 other.gameObject.SetActive(false);
+                //sound//
+                AudioManager.Instance.PlayEffects(ObjectiveHit, 0.5f);
             }
-            
+            if (other.gameObject.tag == EnemyTag)
+            {
+                AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
+            }
+
         }
+
+
     }
 }

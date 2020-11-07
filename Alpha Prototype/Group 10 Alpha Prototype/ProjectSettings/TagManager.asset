@@ -27,7 +27,8 @@ TagManager:
   - Objective
   - Enviroment
   - Drive
-  - Maintence
+  - Enemy
+  - RaceTrackTag
   layers:
   - Default
   - TransparentFX
