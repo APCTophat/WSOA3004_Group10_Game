@@ -211,7 +211,7 @@ namespace Alex.Carvalho
         public void SolarEventHealth()
         {
             Type_3_Res -= Time.deltaTime;
-            Debug.Log("SOlar event going on");
+
         }
 
         public void PowerUp(int upgradeType)

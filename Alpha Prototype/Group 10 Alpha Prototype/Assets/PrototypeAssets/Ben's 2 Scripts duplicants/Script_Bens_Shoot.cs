@@ -24,7 +24,7 @@ public class Script_Bens_Shoot : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanShoot)
+        if (Input.GetKeyDown(KeyCode.M) && GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanShoot && GameManager.GetComponent<Alex.Carvalho.Script_Maintenence_Manager>().TurretWorking)
         {
             GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().DecreaseAmmo();
             Rigidbody fireBullet;

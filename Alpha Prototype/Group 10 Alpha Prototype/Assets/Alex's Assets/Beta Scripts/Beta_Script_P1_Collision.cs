@@ -39,14 +39,22 @@ namespace Alex.Carvalho
         public string CraftingName;
         public GameObject CraftingObject;
         public GameObject GameManager;
-       
+
+        //Repair
+        public string MaintenceObjectTag;
+
         #endregion
 
+
+        public void Update()
+        {
+            CheckForSceneElenemts();
+        }
         void FixedUpdate()
         {
-            CheckRoom();
-            MapInteration();
-            CheckForSceneElenemts();
+            //CheckRoom();
+            //MapInteration();
+            
             if (Input.GetKey(KeyCode.R))
             {
                 GrabHold = true;
@@ -61,7 +69,7 @@ namespace Alex.Carvalho
             if (Physics.Raycast(RayStartingPoint, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance))
             {
                 Debug.DrawRay(RayStartingPoint, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-
+                
                 if (GrabHold && hit.collider.tag == Resource || GrabHold && hit.collider.tag == ContainerCell || GrabHold && hit.collider.tag == RefinedResource)
                 {
                     if (!Holding)
@@ -75,6 +83,11 @@ namespace Alex.Carvalho
                 {
                     Holding = false;
                     hit.collider.transform.parent = null;
+                }
+
+                if(hit.collider.tag == MaintenceObjectTag && Input.GetKey(KeyCode.R))
+                {
+                    hit.transform.GetComponent<Script_Maintenence_Object>().Repair();
                 }
 
             }
@@ -133,25 +146,23 @@ namespace Alex.Carvalho
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2))
             {
+              
                 if (hit.transform.name == CraftingName && Input.GetKeyDown(KeyCode.E))
                 {
+                    
                     CraftingObject.GetComponent<Script_P1_Crafter>().CraftingCheck();
                 }
 
-          
-
                 if(hit.transform.tag == "Drive")
                 {
-                  
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                       
+                        
                         GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToOutside();
                     }
                  
                 }
                
-
             }
         }
     }

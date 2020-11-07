@@ -41,18 +41,21 @@ namespace Alex.Carvalho
         }
 
         private void FixedUpdate()
+        {  
+            CalculateGround();
+            CheckForUpgrade();
+            CheckIfofftrack();
+        }
+
+        public void Update()
         {
             if (StateInt == GameManager.GetComponent<Script_Player_Scene_Manager>()._PlayerStateInt)
             {
-                if (GameManager.GetComponent<Beta_Script_GameManager>().CanMove)
+                if (GameManager.GetComponent<Beta_Script_GameManager>().CanMove && GameManager.GetComponent<Script_Maintenence_Manager>().EngineWorking)
                 {
                     PlayerMovement();
                 }
             }
-              
-            CalculateGround();
-            CheckForUpgrade();
-            CheckIfofftrack();
         }
 
         public void PlayerMovement()

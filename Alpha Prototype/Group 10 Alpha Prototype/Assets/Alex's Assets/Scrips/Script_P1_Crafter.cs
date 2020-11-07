@@ -27,6 +27,7 @@ namespace Alex.Carvalho
         private GameObject _TempObject3;
 
         public Transform SpawnLocation;
+        public Vector3 Offset;
         
         // Start is called before the first frame update
         void Start()
@@ -158,19 +159,19 @@ namespace Alex.Carvalho
         {
             if(_numberOfTrue == 1)
             {
-                // Instantiate(Repair, SpawnLocation.position, Quaternion.identity);
+                Instantiate(Repair, SpawnLocation.position + Offset, Quaternion.identity);
                 Debug.Log(_numberOfTrue + " Crafted");
                 ResetCrafter();
             }
             else if(_numberOfTrue == 2)
             {
-                //Instantiate(Ammo, SpawnLocation.position, Quaternion.identity);
+                Instantiate(Ammo, SpawnLocation.position + Offset, Quaternion.identity);
                 Debug.Log(_numberOfTrue + " Crafted");
                 ResetCrafter();
             }
             else if(_numberOfTrue == 3)
             {
-                //Instantiate(Fuel, SpawnLocation.position, Quaternion.identity);
+                Instantiate(Fuel, SpawnLocation.position + Offset, Quaternion.identity);
                 Debug.Log(_numberOfTrue + " Crafted");
                 ResetCrafter();
             }
