@@ -103,9 +103,9 @@ namespace Alex.Carvalho
             {
                 if(_StateHolder != RefinedReasourceState.Empty)
                 {
-                    if (hit.transform.tag == CraftingOutputTag)
+                    if (hit.transform.tag == CraftingOutputTag)  //This section is now redundent as the crafting system has changed
                     {
-                        FindClosestCraftingBench();
+                        //FindClosestCraftingBench();
                         _StateHolder = RefinedReasourceState.OnOutput;
 
                     }
@@ -113,11 +113,14 @@ namespace Alex.Carvalho
 
                     if (hit.transform.tag == InUseTag)
                     {
+                        /*
                         var temp = hit.transform.GetComponent<Beta_Script_Refined_Output>()._outputType;
                         if ((int)temp == (int)_ResourceType)
                         {
                             _StateHolder = RefinedReasourceState.InUse;
                         }
+                        */
+                        _StateHolder = RefinedReasourceState.InUse;
                     }
 
                     if (hit.transform.tag != CraftingOutputTag && hit.transform.tag != InUseTag)
@@ -179,14 +182,17 @@ namespace Alex.Carvalho
                     case RefinedResourceType.Type_2:  //Ammo
                         GameManager.GetComponent<Beta_Script_GameManager>().IncreaseAmmo();
                         break;
-                    case RefinedResourceType.Type_3:  //Upgrade 
+                    case RefinedResourceType.Type_3:  //RepairKits 
+                        GameManager.GetComponent<Beta_Script_GameManager>().IncreaseRepairKits();
+                        Destroy(gameObject);
+                        /*
                         RaycastHit hit;
                         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5))
                         {
                             var UpgradeType = hit.transform.gameObject.GetComponent<Beta_Script_Refined_Output>()._upgradeType;
                             GameManager.GetComponent<Beta_Script_GameManager>().PowerUp((int)UpgradeType);
                         }
-                          
+                         */ 
                         break;
 
                 }

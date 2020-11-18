@@ -32,9 +32,9 @@ namespace Alex.Carvalho
         {
             if(other.gameObject.tag == ResourceTag)
             {
-                var EnumValue = other.GetComponent<Beta_Script_World_Resource>()._worldResource;
-                GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceP1((int)EnumValue);
-                GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceP2((int)EnumValue, other.transform);
+               //var EnumValue = other.GetComponent<Beta_Script_World_Resource>()._worldResource;
+                GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceInsidePlayer();
+                GameManger.GetComponent<Beta_Script_GameManager>().SpawnResourceOutsidePlayer(other.transform);
                 other.gameObject.SetActive(false);
 
                 //sound//
@@ -45,8 +45,10 @@ namespace Alex.Carvalho
             {
                 var EnumValue = other.GetComponent<Beta_Script_World_Obstacles>()._challengeType;
                 GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth((int)EnumValue);
+                GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
                 //sound//
                 AudioManager.Instance.PlayEffects(MetalHit, 0.5f);
+                
             }
 
             
@@ -61,6 +63,7 @@ namespace Alex.Carvalho
             }
             if (other.gameObject.tag == EnemyTag)
             {
+                GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
                 AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
             }
 
