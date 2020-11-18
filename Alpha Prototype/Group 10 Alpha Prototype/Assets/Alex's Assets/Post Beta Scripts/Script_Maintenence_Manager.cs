@@ -36,10 +36,12 @@ namespace Alex.Carvalho
 
 
         #region Variables related to breaking Objects
+        public float ChanceToBreak;
         public int DroneStateTracker;
         public int MaintenceObjectsNo;
         public GameObject[] MaintenceObjects;
         public bool[] WorkingObjects;
+        public GameObject GameManager;
         #endregion
         void Start()
         {
@@ -52,13 +54,7 @@ namespace Alex.Carvalho
         {
             UpdateTheFunctions();
             Turneverythingoff();
-
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                BreakAnObject();
-            }
-
-            
+            CheckIfAllisWorking();
         }
 
         public void Turneverythingoff()
@@ -77,7 +73,6 @@ namespace Alex.Carvalho
         #region MethodsCalledByObjects
         public void EngineFunction()
         {
-            
             EngineActive = true;
         }
 
@@ -157,23 +152,35 @@ namespace Alex.Carvalho
 
         public void BreakAnObject()
         {
-
-            for (int i = 4; i > -1; i--)
+            float temp = Random.Range(1, 101);
+            
+            if(ChanceToBreak >= temp)
             {
-               
-                if (WorkingObjects[i])
+                for (int i = 4; i > -1; i--)
                 {
-                    MaintenceObjects[i].GetComponent<Script_Maintenence_Object>().BrakeObject();
-                    WorkingObjects[i] = false;
-                    return;
+
+                    if (WorkingObjects[i])
+                    {
+                        MaintenceObjects[i].GetComponent<Script_Maintenence_Object>().BrakeObject();
+                        WorkingObjects[i] = false;
+                        return;
+                    }
                 }
             }
-           
         }
 
         public void FixAnObject(int ObjectInt)
         {
             WorkingObjects[ObjectInt -1] = true;
+        }
+
+        public void CheckIfAllisWorking() //Checks to see if all maintence objects are working, if so, tells the GM to slowly heal the drones
+        {
+            if(EngineActive && TurretActive && minimapActive && EventTimerActive && WarningSystemActive)
+            {
+                GameManager.GetComponent<Beta_Script_GameManager>().HealTheDrone();
+            }
+           
         }
     }
 }

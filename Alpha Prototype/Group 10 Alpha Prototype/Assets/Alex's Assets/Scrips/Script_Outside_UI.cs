@@ -13,12 +13,12 @@ namespace Alex.Carvalho
         {
             if(GameManager.GetComponent<Script_Player_Scene_Manager>()._PlayerStateInt == 0)
             {
-                Debug.Log("Outside");
+
                 Panel.SetActive(true);
             }
             else
             {
-                Debug.Log("Inside");
+                
                 Panel.SetActive(false);
             }
         }

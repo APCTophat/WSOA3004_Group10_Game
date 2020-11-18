@@ -65,7 +65,7 @@ namespace Alex.Carvalho
         public void CraftingComponentChecker()
         {
             RaycastHit hit_1;
-            if (Physics.Raycast(Checker_1.position, transform.TransformDirection(Vector3.up), out hit_1, 5))
+            if (Physics.Raycast(Checker_1.position, transform.TransformDirection(Vector3.down), out hit_1, 5))
             {
           
                 if (hit_1.transform.tag == ResourceTag)
@@ -78,7 +78,7 @@ namespace Alex.Carvalho
                     CraftingPoints[0] = false;
                     _TempObject1 = null;
                 }
-                Debug.DrawRay(Checker_1.position, transform.TransformDirection(Vector3.up) * 5, Color.red);
+                Debug.DrawRay(Checker_1.position, transform.TransformDirection(Vector3.down) * 5, Color.red);
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Alex.Carvalho
             }
 
             RaycastHit hit_2;
-            if (Physics.Raycast(Checker_2.position, transform.TransformDirection(Vector3.up), out hit_2, 5))
+            if (Physics.Raycast(Checker_2.position, transform.TransformDirection(Vector3.down), out hit_2, 5))
             {
                 if (hit_2.transform.tag == ResourceTag)
                 {
@@ -99,7 +99,7 @@ namespace Alex.Carvalho
                     CraftingPoints[1] = false;
                     _TempObject2 = null;
                 }
-                Debug.DrawRay(Checker_2.position, transform.TransformDirection(Vector3.up) * 5, Color.red);
+                Debug.DrawRay(Checker_2.position, transform.TransformDirection(Vector3.down) * 5, Color.red);
             }
             else
             {
@@ -108,7 +108,7 @@ namespace Alex.Carvalho
             }
 
             RaycastHit hit_3;
-            if (Physics.Raycast(Checker_3.position, transform.TransformDirection(Vector3.up), out hit_3, 5))
+            if (Physics.Raycast(Checker_3.position, transform.TransformDirection(Vector3.down), out hit_3, 5))
             {
                 if(hit_3.transform.tag == ResourceTag)
                 {
@@ -121,7 +121,7 @@ namespace Alex.Carvalho
                     _TempObject3 = null;
                 }
                 
-                Debug.DrawRay(Checker_3.position, transform.TransformDirection(Vector3.up) * 5, Color.red);
+                Debug.DrawRay(Checker_3.position, transform.TransformDirection(Vector3.down) * 5, Color.red);
             }
             else
             {

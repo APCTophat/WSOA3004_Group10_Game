@@ -24,15 +24,17 @@ namespace Alex.Carvalho
         public GameObject Raw_Res_Type_3;
         public Transform P1SpawnLocation;
         public Vector3 P1SpawnOffSett;
+
+        public GameObject BaseResource;
         #endregion
 
         #region For P1ayer 2
-        public int Type1ListSize;
-        public List<GameObject> Type1ActiveResource = new List<GameObject>();
-        public int Type2ListSize;
+        public int BaseResourceListSize;
+        public List<GameObject> BaseActiveResource = new List<GameObject>();
+        /*public int Type2ListSize;
         public List<GameObject> Type2ActiveResource = new List<GameObject>();
         public int Type3ListSize;
-        public List<GameObject> Type3ActiveResource = new List<GameObject>();
+        public List<GameObject> Type3ActiveResource = new List<GameObject>(); */
         private List<GameObject> TempDisabledObject = new List<GameObject>();
         #endregion
         #endregion
@@ -42,18 +44,22 @@ namespace Alex.Carvalho
         public float Type_1_Res;  //Fuel
         public float Type_2_Res;  //Ammo
         public float Type_3_Res;  //Health
+        public float Type_4_Res;  //RepairKit
         //The resources Max
         public float Type_1_Res_Max;
         public float Type_2_Res_Max;
         public float Type_3_Res_Max;
+        public float Type_4_Res_Max;
         //The resources Decrease Rate
         public float Type_1_Dec_Rate;
         public float Type_2_Dec_Rate;
         public float Type_3_Dec_Rate;
+        public float Type_4_Dec_By;
         //The Resources Increase Rate
         public float Type_1_Inc_Rate;
         public float Type_2_Inc_Rate;
         public float Type_3_Inc_Rate;
+        public float Type_4_Inc_By;
         //Variables relating to the P2 Actions
         public bool CanShoot;
         public bool CanMove;
@@ -191,6 +197,15 @@ namespace Alex.Carvalho
             Type_2_Res -= Type_2_Dec_Rate;
         }
 
+        public void IncreaseRepairKits()
+        {
+            Type_4_Res += Type_4_Inc_By;
+        }
+
+        public void DecreaseRepairKits()
+        {
+            Type_4_Res -= Type_4_Dec_By;
+        }
         public void DecreaseHealth(int EnumValue)
         {
            
@@ -214,6 +229,7 @@ namespace Alex.Carvalho
 
         }
 
+       
         public void PowerUp(int upgradeType)
         {
 
@@ -233,12 +249,18 @@ namespace Alex.Carvalho
             }
             
         }
+
+        public void HealTheDrone()
+        {
+            Type_3_Res += Type_3_Inc_Rate * Time.deltaTime;
+        }
         #endregion
 
         #region SpawningResources
         #region Player 1 Enviroment
         public void SpawnResourceP1(int WorldResourceInt)
         {
+            Debug.Log("SpawnResourceP1 has gone off");
             if (WorldResourceInt == (int)ResourceType.ofType1)
             {
                 Instantiate(Raw_Res_Type_1, P1SpawnLocation.position + P1SpawnOffSett, Quaternion.identity);
@@ -256,6 +278,11 @@ namespace Alex.Carvalho
                 Debug.Log("Spawning Resouce did not find a match for the resource type");
             }
         }
+
+        public void SpawnResourceInsidePlayer()
+        {
+            Instantiate(BaseResource, P1SpawnLocation.position + P1SpawnOffSett, Quaternion.identity);
+        }
         #endregion
 
         #region Player 2 Enviroment
@@ -268,22 +295,43 @@ namespace Alex.Carvalho
             TempDisabledObject.Clear();
         }
 
+        public void SpawnResourceOutsidePlayer(Transform _transform)
+        {
+            for (int i = 0; i < BaseResourceListSize; i++)
+            {
+                if (BaseActiveResource[i].transform.position != _transform.position)
+                {
+                    if (BaseActiveResource[i].activeInHierarchy == false)
+                    {
+                        TempDisabledObject.Add(BaseActiveResource[i]);
+                    }
+
+                }
+
+                if (i == BaseResourceListSize - 1)
+                {
+
+                    UpdateTypeLists();
+                }
+            }
+        }
+        /*
         public void SpawnResourceP2(int WorldResourceInt, Transform _transform)
         {
             if(WorldResourceInt == (int)ResourceType.ofType1)
             {                
-                for (int i = 0; i < Type1ListSize; i++)
+                for (int i = 0; i < BaseResourceListSize; i++)
                 {
-                    if(Type1ActiveResource[i].transform.position != _transform.position)
+                    if(BaseActiveResource[i].transform.position != _transform.position)
                     {
-                        if(Type1ActiveResource[i].activeInHierarchy == false)
+                        if(BaseActiveResource[i].activeInHierarchy == false)
                         {
-                            TempDisabledObject.Add(Type1ActiveResource[i]);
+                            TempDisabledObject.Add(BaseActiveResource[i]);
                         }
                         
                     }
 
-                    if(i == Type1ListSize - 1)
+                    if(i == BaseResourceListSize - 1)
                     {
                         
                         UpdateTypeLists();
@@ -331,7 +379,7 @@ namespace Alex.Carvalho
                 }
             }
         }
-
+        */
 
         #endregion
         #endregion
