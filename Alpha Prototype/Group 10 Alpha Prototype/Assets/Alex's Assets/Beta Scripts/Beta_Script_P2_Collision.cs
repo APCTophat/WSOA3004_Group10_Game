@@ -63,6 +63,7 @@ namespace Alex.Carvalho
             }
             if (other.gameObject.tag == EnemyTag)
             {
+                GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth(2);
                 GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
                 AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
             }

@@ -29,6 +29,8 @@ TagManager:
   - Drive
   - Enemy
   - RaceTrackTag
+  - Maintence
+  - Player2
   layers:
   - Default
   - TransparentFX

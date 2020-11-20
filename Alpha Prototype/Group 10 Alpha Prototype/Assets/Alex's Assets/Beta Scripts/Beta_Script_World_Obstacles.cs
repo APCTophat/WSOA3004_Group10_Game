@@ -37,7 +37,7 @@ namespace Alex.Carvalho
         {
             if(_challengeType == ChallengeType.Enemy)
             {
-                EnemeyMovement();
+              //  EnemeyMovement();
             }
 
             if(Health <=0)
