@@ -58,6 +58,8 @@ namespace Alex.Carvalho
             }
         }
 
+
+         
         public void PlayerMovement()
         {
             float _vertical = Input.GetAxisRaw("Player 1 Vertical");

@@ -9,15 +9,23 @@ namespace Alex.Carvalho
     {
         public float AiRadius = 10;
 
-
         Transform target;
         NavMeshAgent agent;
+
+        public Transform Gun;
+        public Rigidbody Bullet;
+
+        public float ShootInterval;
+        private float ShootCountDown;
+
+        public float BulletSpeed;
 
         // Start is called before the first frame update
         void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player2").transform;
             agent = GetComponent<NavMeshAgent>();
+            ShootCountDown = ShootInterval;
         }
 
         // Update is called once per frame
@@ -34,6 +42,7 @@ namespace Alex.Carvalho
                     FacePlayer();
                 }
             }
+            Shoot();
         }
 
         public void FacePlayer()
@@ -51,6 +60,31 @@ namespace Alex.Carvalho
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, AiRadius);
+        }
+
+        public void Shoot()
+        {
+
+            RaycastHit hit;
+            if (Physics.Raycast(Gun.transform.position, transform.TransformDirection(Vector3.forward), out hit, AiRadius))
+            {
+                Debug.DrawRay(Gun.transform.position, transform.TransformDirection(Vector3.forward), Color.red);
+                if(hit.transform.tag == "Player2")
+                {
+
+                    ShootCountDown -= Time.deltaTime;
+                    if(ShootCountDown <= 0)
+                    {
+                       
+                        Rigidbody fireBullet;
+                        fireBullet = Instantiate(Bullet, Gun.position, Gun.rotation) as Rigidbody;
+                        fireBullet.AddForce(Gun.forward * BulletSpeed);
+                        ShootCountDown = ShootInterval;
+                    }
+                 
+                }
+               
+            }
         }
     }
 }

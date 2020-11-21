@@ -61,15 +61,23 @@ namespace Alex.Carvalho
                 //sound//
                 AudioManager.Instance.PlayEffects(ObjectiveHit, 0.5f);
             }
-            if (other.gameObject.tag == EnemyTag)
-            {
-                GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth(2);
-                GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
-                AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
-            }
+
+           
 
         }
 
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log(collision.transform.tag);
+            if (collision.transform.tag == "Projectile")
+            {
+
+                Debug.Log("Hit");
+                GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth(2);
+                GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
+            }
+        }
 
     }
 }

@@ -24,4 +24,11 @@ public class DestroyProjectile : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.transform.name);
+        Destroy(gameObject);
+
+    }
 }

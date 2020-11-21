@@ -9,7 +9,7 @@ public class Script_Inside_Base_Resource : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {

@@ -35,52 +35,27 @@ namespace Alex.Carvalho
        
         void Update()
         {
-            if(_challengeType == ChallengeType.Enemy)
-            {
-              //  EnemeyMovement();
-            }
-
+           
             if(Health <=0)
             {
                 Destroy(gameObject);
             }
         }
 
-        public void EnemeyMovement()
-        {
-            moveIntervals -= Time.deltaTime;
-            if(moveIntervals <= 0)
-            {
-               
-                float newZPos = Random.Range(StartPos.z - 5f, StartPos.z + 5f);
-                float newXPos = Random.Range(StartPos.x - 5f, StartPos.x + 5f);
-                TargetPos = new Vector3(newXPos, transform.localPosition.y, newZPos);
-                /*
-                Vector3 targetDirection = TargetPos - transform.position;
-                float angle = Vector3.Angle(targetDirection, transform.forward);
-                
-                transform.rotation = Quaternion.LookRotation(new Vector3(0, angle, 0)); */
-                
-                moveIntervals = 5f;
+      
 
-            }
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, TargetPos, moveSpeed);
-            
-        }
-
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if(_challengeType == ChallengeType.Enemy)
+            if (_challengeType == ChallengeType.Enemy)
             {
-                if (other.gameObject.tag == "Projectile")
+                if (collision.gameObject.tag == "Projectile")
                 {
                     float Damage = gun.GetComponent<Script_Bens_Shoot>()._bulletDamage;
                     Health -= Damage;
                 }
             }
-          
         }
 
-       
+
     }
 }
