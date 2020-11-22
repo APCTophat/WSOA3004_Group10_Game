@@ -196,7 +196,7 @@ namespace Alex.Carvalho
         {
             Type_2_Res -= Type_2_Dec_Rate;
         }
-
+        /*
         public void IncreaseRepairKits()
         {
             Type_4_Res += Type_4_Inc_By;
@@ -205,7 +205,8 @@ namespace Alex.Carvalho
         public void DecreaseRepairKits()
         {
             Type_4_Res -= Type_4_Dec_By;
-        }
+        }*/
+
         public void DecreaseHealth(int EnumValue)
         {
            

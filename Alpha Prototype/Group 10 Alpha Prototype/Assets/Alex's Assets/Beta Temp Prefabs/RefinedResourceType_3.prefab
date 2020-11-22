@@ -221,6 +221,7 @@ MonoBehaviour:
   CraftingOutputTag: CraftingOutput
   InUseTag: UseResource
   DestroyTag: DestroyTag
+  RepairTag: Maintence
   object_CraftingBench: []
   closestCB: {fileID: 0}
   GameManager: {fileID: 0}

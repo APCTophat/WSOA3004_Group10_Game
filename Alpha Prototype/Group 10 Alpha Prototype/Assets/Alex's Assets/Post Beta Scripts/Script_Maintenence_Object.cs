@@ -24,11 +24,9 @@ namespace Alex.Carvalho
 
         public GameObject GameManger;
 
-        public float RepairValue;
-        public float RepairRate;
-        public float MaxValue;
+        public GameObject SmokeGenerator;
 
-        public Image repairBar;
+       
         private void Start()
         {
             FixObject();
@@ -73,9 +71,10 @@ namespace Alex.Carvalho
 
         public void BrakeObject()
         {
-            //Code that show cases the object is broken such as particle effects or sounds ect
+           
+            SmokeGenerator.SetActive(true);
             isWorking = false;
-            transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+           
         }
 
         public void Repair()
@@ -83,21 +82,15 @@ namespace Alex.Carvalho
             
             if (!isWorking)
             {
-                RepairValue += RepairRate * Time.deltaTime;
-                repairBar.fillAmount = RepairValue / MaxValue;
-                if (RepairValue >= MaxValue)
-                {
-                    FixObject();
-                    RepairValue = 0;
-                }
+                FixObject();
+               
             }
         }
 
         public void FixObject()
         {
             isWorking = true;
-            transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-            repairBar.fillAmount = 0;
+            SmokeGenerator.SetActive(false);
             GameManger.GetComponent<Script_Maintenence_Manager>().FixAnObject((int)ThisObject);
         }
      

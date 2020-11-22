@@ -55,6 +55,11 @@ namespace Alex.Carvalho
             UpdateTheFunctions();
             Turneverythingoff();
             CheckIfAllisWorking();
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                BreakAnObject();
+            }
         }
 
         public void Turneverythingoff()

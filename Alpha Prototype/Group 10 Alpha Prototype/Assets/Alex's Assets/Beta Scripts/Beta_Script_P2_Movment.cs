@@ -91,7 +91,7 @@ namespace Alex.Carvalho
                 GameManager.GetComponent<Beta_Script_GameManager>().DecreaseFuel();
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.H))
             {
 
                 GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToInside();

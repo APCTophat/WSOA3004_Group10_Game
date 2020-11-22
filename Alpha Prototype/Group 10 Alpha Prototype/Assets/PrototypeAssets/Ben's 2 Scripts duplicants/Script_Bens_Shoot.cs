@@ -16,6 +16,7 @@ public class Script_Bens_Shoot : MonoBehaviour
 
     public AudioClip gunShot;
 
+    private int StateInt = 0;
 
     public void Start()
     {
@@ -24,16 +25,18 @@ public class Script_Bens_Shoot : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanShoot && GameManager.GetComponent<Alex.Carvalho.Script_Maintenence_Manager>().TurretWorking)
+        if(StateInt == GameManager.GetComponent<Alex.Carvalho.Script_Player_Scene_Manager>()._PlayerStateInt)
         {
-            GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().DecreaseAmmo();
-            Rigidbody fireBullet;
-            fireBullet = Instantiate(_Projectile, _Cannon.position, _Cannon.rotation) as Rigidbody;
-            fireBullet.AddForce(_Cannon.forward * 10000);
+            if (Input.GetKeyDown(KeyCode.G) && GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().CanShoot && GameManager.GetComponent<Alex.Carvalho.Script_Maintenence_Manager>().TurretWorking)
+            {
+                GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().DecreaseAmmo();
+                Rigidbody fireBullet;
+                fireBullet = Instantiate(_Projectile, _Cannon.position, _Cannon.rotation) as Rigidbody;
+                fireBullet.AddForce(_Cannon.forward * 10000);
 
-            AudioManager.Instance.PlayEffects(gunShot, 0.5f);
+                AudioManager.Instance.PlayEffects(gunShot, 0.5f);
+            }
         }
-
 
         if (GameManager.GetComponent<Alex.Carvalho.Beta_Script_GameManager>().UpgradedDamage)
         {

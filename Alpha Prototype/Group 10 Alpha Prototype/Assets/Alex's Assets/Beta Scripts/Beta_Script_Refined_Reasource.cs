@@ -13,7 +13,8 @@ namespace Alex.Carvalho
             Idle = 0,
             InUse = 1,
             OnOutput = 2,
-            Empty = 3
+            Empty = 3,
+            Repair = 4
         }
         public enum RefinedResourceType
         {
@@ -34,6 +35,9 @@ namespace Alex.Carvalho
         public string InUseTag;
         [Tooltip("The name of the tag to destroy the resource")]
         public string DestroyTag;
+        [Tooltip("The name of the tag of the object to be repaired")]
+        public string RepairTag;
+        private string RepairObject;
         #endregion
 
         #region Communication Variables
@@ -85,7 +89,7 @@ namespace Alex.Carvalho
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5))
             {
-                
+
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.red);
 
             }
@@ -123,9 +127,16 @@ namespace Alex.Carvalho
                         _StateHolder = RefinedReasourceState.InUse;
                     }
 
-                    if (hit.transform.tag != CraftingOutputTag && hit.transform.tag != InUseTag)
+                    if (hit.transform.tag != CraftingOutputTag && hit.transform.tag != InUseTag && hit.transform.tag != RepairTag)
                     {
                         _StateHolder = RefinedReasourceState.Idle;
+                    }
+
+                    if(hit.transform.tag == RepairTag)
+                    {
+                        hit.transform.GetComponent<Script_Maintenence_Object>().Repair();
+                        _StateHolder = RefinedReasourceState.Repair;
+
                     }
                 }
                 
@@ -182,9 +193,7 @@ namespace Alex.Carvalho
                     case RefinedResourceType.Type_2:  //Ammo
                         GameManager.GetComponent<Beta_Script_GameManager>().IncreaseAmmo();
                         break;
-                    case RefinedResourceType.Type_3:  //RepairKits 
-                        GameManager.GetComponent<Beta_Script_GameManager>().IncreaseRepairKits();
-                        Destroy(gameObject);
+                    
                         /*
                         RaycastHit hit;
                         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5))
@@ -193,9 +202,19 @@ namespace Alex.Carvalho
                             GameManager.GetComponent<Beta_Script_GameManager>().PowerUp((int)UpgradeType);
                         }
                          */ 
-                        break;
-
                 }
+            }
+
+            if(_StateHolder == RefinedReasourceState.Repair)
+            {
+                switch (_ResourceType)
+                {
+                    case RefinedResourceType.Type_3:
+
+                        Destroy(gameObject);
+                        break;
+                }
+                
             }
         }
         #endregion

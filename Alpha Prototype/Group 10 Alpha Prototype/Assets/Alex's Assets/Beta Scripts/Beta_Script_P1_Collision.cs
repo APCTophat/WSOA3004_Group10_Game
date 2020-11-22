@@ -22,13 +22,14 @@ namespace Alex.Carvalho
 
         public Vector3 offset;
 
+        /*
         //Scene Transitions
         public GameObject Camera;
         public string AmmoRoom;
         public string CenterRoom;
         public string EngineRoom;
         public string UpgradeRoom;
-
+        */
         //Map variables
         public string MapName;
         public GameObject MiniMap;
@@ -55,7 +56,7 @@ namespace Alex.Carvalho
             //CheckRoom();
             //MapInteration();
             
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.G))
             {
                 GrabHold = true;
             }
@@ -85,14 +86,9 @@ namespace Alex.Carvalho
                     hit.collider.transform.parent = null;
                 }
 
-                if(hit.collider.tag == MaintenceObjectTag && Input.GetKey(KeyCode.R))
-                {
-                    hit.transform.GetComponent<Script_Maintenence_Object>().Repair();
-                }
-
             }
         }
-
+        /*
         public void CheckRoom()
         {
             RaycastHit hit;
@@ -140,22 +136,23 @@ namespace Alex.Carvalho
             }
 
         }
-
+        */
         public void CheckForSceneElenemts()
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2))
             {
               
-                if (hit.transform.name == CraftingName && Input.GetKeyDown(KeyCode.E))
+                if (hit.transform.name == CraftingName && Input.GetKeyDown(KeyCode.H))
                 {
-                    
+                    Debug.Log("CRAFTER HIT");
                     CraftingObject.GetComponent<Script_P1_Crafter>().CraftingCheck();
                 }
 
                 if(hit.transform.tag == "Drive")
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
+
+                    if (Input.GetKeyDown(KeyCode.H))
                     {
                         
                         GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToOutside();

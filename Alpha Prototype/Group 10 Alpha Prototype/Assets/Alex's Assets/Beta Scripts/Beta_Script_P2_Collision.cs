@@ -69,11 +69,9 @@ namespace Alex.Carvalho
 
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log(collision.transform.tag);
+
             if (collision.transform.tag == "Projectile")
             {
-
-                Debug.Log("Hit");
                 GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth(2);
                 GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
             }

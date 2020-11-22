@@ -149,10 +149,7 @@ namespace Alex.Carvalho
                     Craft();
                     
                 }
-            }
-
-            
-        
+            }        
         }
 
         public void Craft()

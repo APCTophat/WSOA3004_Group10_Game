@@ -33,16 +33,6 @@ namespace Alex.Carvalho
             InsidePlayerSettings();
             OutsidePlayerSettings();
             _PlayerStateInt = (int)_PlayerState;
-
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                ChangeToInside();
-            }
-
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                ChangeToOutside();
-            }
         }
 
         public void ChangeToInside()
