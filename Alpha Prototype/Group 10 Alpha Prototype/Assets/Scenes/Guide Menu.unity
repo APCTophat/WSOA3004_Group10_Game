@@ -246,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -350,7 +350,7 @@ RectTransform:
   m_GameObject: {fileID: 718619308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 793145956}
   m_RootOrder: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7b0ebcb2328cee47bd14f4042e58e4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7020baf032d987f449cdcbcf38ef0983, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -570,28 +570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Player 1 Controls\r\n\u2022\tThe map is made of 4 Rooms: The Central,
-    Ammo, Upgrade and Engine Room.\r\n1.\tCentral Room \u2013 This room has the Spawning
-    location, Storage for the raw resources, and the map.\r\n2.\tAmmo Room \u2013
-    This room is on the left and has a crafting station, a loading station, and a
-    bin.\r\n3.\tUpgrade Room \u2013 This room is on the right and has a crafting
-    station, three loading stations for different upgrades, and a bin.\r\n4.\tThe
-    Engine Room \u2013 This room is below has a crating station, a loading station,
-    and a bin.\r\n\u2022\tPlayer 1\u2019s objective is to keep the drone running,
-    making sure its ammunition, fuel, and health do not drop to 0. As well as providing
-    information to the drone about the location of enemies and resources. \r\n\u2022\tPlayers
-    are required to take a \u2018raw resource\u2019 from the spawner to a corresponding
-    crafting station to make a \u2018refined resource\u2019.\r\n\u2022\tThey use
-    this refined resource on the corresponding loading station, when a refined resource
-    is used up the player needs to throw away that resource in the bin.\r\n\u2022\tWASD
-    to Move\r\n\u2022\tPress and Hold \u2018R\u2019 when facing an object to pick
-    it up, Release \u2018R\u2019 to let go.\r\n\u2022\tIn the starting Room Press
-    and Hold \u2018T\u2019 when over the map section to view the map.\r\n\r\nPlayer
-    2 Controls\r\n\u2022\tThis player\u2019s goal is to navigate the drone through
-    an environment\r\n\u2022\tIn this environment they can find and pick up resources
-    which player 1 will have access too.\r\n\u2022\tThe environment also has obstacles
-    and enemies that can damage the player that they need to avoid.\r\n\u2022\tThe
-    arrow keys to move\r\n\u2022\tPress M to shoot\r\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -618,7 +597,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.1
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -877,7 +856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -153, y: -118}
+  m_AnchoredPosition: {x: -586, y: -118}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435543375
@@ -902,15 +881,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: How to play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d6902c54a244694b9e29f5a2145b7fb, type: 2}
+  m_sharedMaterial: {fileID: 6396011457256436932, guid: 4d6902c54a244694b9e29f5a2145b7fb,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287658585
-  m_fontColor: {r: 0.3492346, g: 0.4770929, b: 0.5660378, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
@@ -934,7 +914,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1092,7 +1072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d73b8015619bd4b489b89033fea65749, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdefb4f2f87c3c9409f6c64692578e73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
