@@ -30,7 +30,10 @@ namespace Alex.Carvalho
         public Vector3 _velocityUp;
         public Vector3 _RayCastOffset;
 
-       public GameObject GameManager;
+        public GameObject GameManager;
+        //sounds
+        public bool NowInside;
+        public GameObject Player1;
 
         public int StateInt;
         private void Start()
@@ -95,6 +98,9 @@ namespace Alex.Carvalho
             {
 
                 GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToInside();
+                //Activate correct sounds
+                NowInside = true;
+                Player1.GetComponent<Beta_Script_P1_Collision>().NowOutside = false;
             }
 
 

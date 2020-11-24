@@ -34,7 +34,7 @@ public class Script_Bens_Shoot : MonoBehaviour
                 fireBullet = Instantiate(_Projectile, _Cannon.position, _Cannon.rotation) as Rigidbody;
                 fireBullet.AddForce(_Cannon.forward * 10000);
 
-                AudioManager.Instance.PlayEffects(gunShot, 0.5f);
+                AudioManager.Instance.PlayEffects(gunShot, 0.2f);
             }
         }
 

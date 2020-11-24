@@ -35,6 +35,9 @@ namespace Alex.Carvalho
         public GameObject MiniMap;
         //Audio
         public AudioClip Hold;
+        public AudioClip Placedown;
+        public bool NowOutside;
+        public GameObject Player2;
 
         //Crafting
         public string CraftingName;
@@ -79,11 +82,14 @@ namespace Alex.Carvalho
                         Holding = true;
                         AudioManager.Instance.PlayEffects(Hold, 0.5f);
                     }
+
                 }
                 else if(hit.collider.tag == Resource || hit.collider.tag == ContainerCell || hit.collider.tag == RefinedResource)
                 {
                     Holding = false;
                     hit.collider.transform.parent = null;
+
+
                 }
 
             }
@@ -156,6 +162,10 @@ namespace Alex.Carvalho
                     {
                         
                         GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToOutside();
+                        //Activate correct sounds
+                        NowOutside = true;
+                        Player2.GetComponent<Beta_Script_P2_Movment>().NowInside = false;
+
                     }
                  
                 }

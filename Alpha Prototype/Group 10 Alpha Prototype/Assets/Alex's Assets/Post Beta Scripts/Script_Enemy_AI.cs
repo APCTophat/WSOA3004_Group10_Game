@@ -20,6 +20,9 @@ namespace Alex.Carvalho
 
         public float BulletSpeed;
 
+        public AudioClip gunsound;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -69,7 +72,8 @@ namespace Alex.Carvalho
             if (Physics.Raycast(Gun.transform.position, transform.TransformDirection(Vector3.forward), out hit, AiRadius))
             {
                 Debug.DrawRay(Gun.transform.position, transform.TransformDirection(Vector3.forward), Color.red);
-                if(hit.transform.tag == "Player2")
+               
+                if (hit.transform.tag == "Player2")
                 {
 
                     ShootCountDown -= Time.deltaTime;
@@ -80,11 +84,14 @@ namespace Alex.Carvalho
                         fireBullet = Instantiate(Bullet, Gun.position, Gun.rotation) as Rigidbody;
                         fireBullet.AddForce(Gun.forward * BulletSpeed);
                         ShootCountDown = ShootInterval;
+                        AudioManager.Instance.PlayEffects(gunsound, 0.5f);
                     }
                  
                 }
                
             }
+
+
         }
     }
 }

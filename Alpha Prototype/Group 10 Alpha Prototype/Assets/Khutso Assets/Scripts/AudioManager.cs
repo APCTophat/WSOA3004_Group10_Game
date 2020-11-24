@@ -61,6 +61,7 @@ public class AudioManager : MonoBehaviour
             DroneSound.SetActive(false);
             Player1Sound.SetActive(false);
         }
+
     }
     //Play sounds.
     public void PlayMusic(AudioClip musicClip)

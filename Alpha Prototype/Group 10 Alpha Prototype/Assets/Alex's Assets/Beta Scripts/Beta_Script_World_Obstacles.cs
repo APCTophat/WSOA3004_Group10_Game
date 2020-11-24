@@ -23,7 +23,7 @@ namespace Alex.Carvalho
         public Vector3 TargetPos;
 
         public GameObject gun;
-        
+        public AudioClip BulletHit;
         void Start()
         {
             gun = GameObject.Find("Gun Script Holder");
@@ -52,6 +52,7 @@ namespace Alex.Carvalho
                 {
                     float Damage = gun.GetComponent<Script_Bens_Shoot>()._bulletDamage;
                     Health -= Damage;
+                    AudioManager.Instance.PlayEffects(BulletHit, 0.5f);
                 }
             }
         }

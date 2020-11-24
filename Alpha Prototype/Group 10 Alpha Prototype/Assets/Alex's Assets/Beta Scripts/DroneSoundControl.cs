@@ -11,14 +11,16 @@ public class DroneSoundControl : MonoBehaviour
     public GameObject SoundHolder;
     public GameObject turnSoundHolder;
     public GameObject GameManager;
+    public GameObject Player1;
+    public GameObject Player2;
     public float timer;
     public float timer2;
 
     bool startCount = false;
     bool startCountAgain = false;
 
-    bool Inside = false;
-    bool Outside = true;
+    public bool Inside = false;
+    public bool Outside = true;
 
     CharacterController _mover;
     void Start()
@@ -32,12 +34,12 @@ public class DroneSoundControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Player2.GetComponent<Alex.Carvalho.Beta_Script_P2_Movment>().NowInside == true)
         {
             Inside = true;
             Outside = false;
         }
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Player1.GetComponent<Alex.Carvalho.Beta_Script_P1_Collision>().NowOutside == true)
         {
             Inside = false;
             Outside = true;
@@ -135,6 +137,15 @@ public class DroneSoundControl : MonoBehaviour
 
     }
  
-
-  
+    public void Player2Inside()
+    {
+        Inside = true;
+        Outside = false;
+    }
+    
+    public void Player2Outside()
+    {
+        Inside = false;
+        Outside = true;
+    }
 }

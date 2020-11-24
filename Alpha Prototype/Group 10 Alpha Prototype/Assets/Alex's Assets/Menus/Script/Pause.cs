@@ -23,9 +23,9 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) & howtoMenu.activeSelf != true)//the "&" to make sure the game does not play during "How to play" scene
         {
-            if (isPause)
+            if (isPause & pauseMenu)
             {
                 Resume();
             }

@@ -12,6 +12,7 @@ namespace Alex.Carvalho
         public AudioClip ObjectiveHit;
         public AudioClip ResourceHit;
         public AudioClip EnemyHit;
+        public AudioClip BulletHit;
 
         public string ResourceTag;
         public string ObstacleTag;
@@ -62,6 +63,10 @@ namespace Alex.Carvalho
                 AudioManager.Instance.PlayEffects(ObjectiveHit, 0.5f);
             }
 
+            if (other.transform.tag == "Enemy")
+            {
+                Debug.Log("Collieded with the enemy");
+            }
            
 
         }
@@ -74,6 +79,14 @@ namespace Alex.Carvalho
             {
                 GameManger.GetComponent<Beta_Script_GameManager>().DecreaseHealth(2);
                 GameManger.GetComponent<Script_Maintenence_Manager>().BreakAnObject();
+                //sound
+                AudioManager.Instance.PlayEffects(BulletHit, 0.5f);
+            }
+
+            if (collision.transform.tag == "Enemy")
+            {
+                //AudioManager.Instance.PlayEffects(EnemyHit, 0.5f);
+                Debug.Log("Collieded with the enemy");
             }
         }
 
