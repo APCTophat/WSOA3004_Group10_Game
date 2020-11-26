@@ -58,6 +58,15 @@ namespace Alex.Carvalho
                 {
                     PlayerMovement();
                 }
+
+                if (Input.GetKeyDown(KeyCode.H))
+                {
+
+                    GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToInside();
+                    //Activate correct sounds
+                    NowInside = true;
+                    Player1.GetComponent<Beta_Script_P1_Collision>().NowOutside = false;
+                }
             }
         }
 
@@ -93,16 +102,6 @@ namespace Alex.Carvalho
 
                 GameManager.GetComponent<Beta_Script_GameManager>().DecreaseFuel();
             }
-
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-
-                GameManager.GetComponent<Script_Player_Scene_Manager>().ChangeToInside();
-                //Activate correct sounds
-                NowInside = true;
-                Player1.GetComponent<Beta_Script_P1_Collision>().NowOutside = false;
-            }
-
 
         }
 
