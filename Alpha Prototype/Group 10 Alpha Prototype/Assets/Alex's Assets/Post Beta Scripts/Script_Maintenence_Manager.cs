@@ -31,7 +31,9 @@ namespace Alex.Carvalho
 
         //Warning System Related Variables
         public bool WarningSystemActive;
-        public GameObject WarningObject;
+        public GameObject WarningObject_ON;
+        public GameObject WarningObject_OFF;
+        public bool EnemyInRange;
         #endregion
 
 
@@ -72,6 +74,7 @@ namespace Alex.Carvalho
                 minimapActive = false;
                 EventTimerActive = false;
                 WarningSystemActive = false;
+                EnemyInRange = false;
                 tempfloat = IntervalReset;
             }
         }
@@ -95,7 +98,7 @@ namespace Alex.Carvalho
         {
             EventTimerActive = true;
         }
-
+        
         public void WarningFunction()
         {
             WarningSystemActive = true;
@@ -145,13 +148,15 @@ namespace Alex.Carvalho
             }
 
             //If the warning system is active then it will go off to notify the player an enemy is near, else it won't
-            if (WarningSystemActive)
+            if (WarningSystemActive && EnemyInRange)
             {
-               // WarningObject.SetActive(true);
+               WarningObject_ON.SetActive(true);
+                WarningObject_OFF.SetActive(false);
             }
             else
             {
-               // WarningObject.SetActive(false);
+               WarningObject_ON.SetActive(false);
+                WarningObject_OFF.SetActive(true);
             }
         }
 

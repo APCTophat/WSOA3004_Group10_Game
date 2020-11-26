@@ -22,6 +22,7 @@ namespace Alex.Carvalho
 
         public AudioClip gunsound;
 
+        public GameObject GameManager;
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +30,7 @@ namespace Alex.Carvalho
             target = GameObject.FindGameObjectWithTag("Player2").transform;
             agent = GetComponent<NavMeshAgent>();
             ShootCountDown = ShootInterval;
+            GameManager = GameObject.FindGameObjectWithTag("GameController");
         }
 
         // Update is called once per frame
@@ -43,6 +45,12 @@ namespace Alex.Carvalho
                 if(distance <= agent.stoppingDistance)
                 {
                     FacePlayer();
+                }
+
+                if(distance <= AiRadius / 2)
+                {
+                    GameManager.GetComponent<Script_Maintenence_Manager>().EnemyInRange = true;
+                   
                 }
             }
             Shoot();
