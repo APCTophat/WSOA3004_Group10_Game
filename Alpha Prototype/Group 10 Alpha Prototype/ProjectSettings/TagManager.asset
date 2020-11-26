@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Reasource 1
+  - BaseReasource
+  - Reasource 2
+  - Reasource 3
+  - DrainReasource
+  - FillReasource
+  - CollectReasource
+  - StoreReasource
+  - SpawnReasource
+  - ContainmentCells
+  - Player 2
+  - Clone
+  - CraftingInput
+  - CraftingOutput
+  - CraftingBench
+  - RefinedResource
+  - UseResource
+  - DestroyTag
+  - Obstacle
+  - Projectile
+  - Objective
+  - Enviroment
+  - Drive
+  - Enemy
+  - RaceTrackTag
+  - Maintence
+  - Player2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player1
+  - Player2
+  - MiniMap
+  - PostProcess
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
