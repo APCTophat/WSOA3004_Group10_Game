@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BetaScene.unity
     guid: 292adc370a422f24891238246aa1e294
+  - enabled: 1
+    path: Assets/Scenes/WonGameScene.unity
+    guid: f61f906dd870d54459608eb908a8a447
   m_configObjects: {}

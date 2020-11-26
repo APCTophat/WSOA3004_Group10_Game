@@ -232,6 +232,7 @@ namespace Alex.Carvalho
                 _StateHolder = RefinedReasourceState.Empty;
                 Material mat = GetComponent<MeshRenderer>().material;
                 mat.color = DeadMat.color;
+                Destroy(gameObject);
             }
         }
 

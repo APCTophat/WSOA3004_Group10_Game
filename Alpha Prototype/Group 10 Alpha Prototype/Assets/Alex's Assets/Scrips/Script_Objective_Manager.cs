@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Alex.Carvalho
 {
@@ -11,6 +12,7 @@ namespace Alex.Carvalho
         public float OnGoingTime;
         public Text TimeDisplay;
         public float Score;
+        public Text ScoreText;
 
 
 
@@ -28,6 +30,7 @@ namespace Alex.Carvalho
         void Update()
         {
             CheckForWinCondition();
+            ScoreText.text = Score.ToString();
            
         }
 
@@ -36,7 +39,7 @@ namespace Alex.Carvalho
         {
             if (Score == ObjectiveListLength)
             {
-               
+                SceneManager.LoadScene("WonGameScene");
             }
 
             if(Score != ObjectiveListLength)
