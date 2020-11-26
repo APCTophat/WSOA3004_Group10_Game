@@ -137,11 +137,11 @@ namespace Alex.Carvalho
             //If the event Timer is active then the countdown to the next solar event will show, else it won't show
             if (EventTimerActive)
             {
-                //EventTimerObject.SetActive(true);
+                EventTimerObject.SetActive(true);
             }
             else
             {
-                //EventTimerObject.SetActive(false);
+                EventTimerObject.SetActive(false);
             }
 
             //If the warning system is active then it will go off to notify the player an enemy is near, else it won't
